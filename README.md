@@ -1,6 +1,9 @@
 # Диаграмма вариантов использования "Умный дом"
 
-![Диаграмма умного дома](<img width="1942" height="470" alt="Image" src="https://github.com/user-attachments/assets/070fc632-5188-4257-a6d1-d2e3e1e490a7" />)
+<h1 align="center">
+<img width="1942" height="470" alt="Image" src="https://github.com/user-attachments/assets/67d771fb-e0f9-4e9c-ace3-545e8d509d46" />
+</h1>
+
 
 ## Описание
 - **Владелец**: Полный доступ ко всем функциям
