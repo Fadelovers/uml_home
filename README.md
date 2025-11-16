@@ -12,7 +12,15 @@
 - **Мобильное приложение**: Удаленное управление
 
 
-# Умный дом - Диаграмма использования
+## Описание кода PlantUML
+
+```PlantUML
+!theme materia-outline
+top to bottom direction
+```
+
+
+# Умный дом - Диаграмма использования markdown
 
 ```mermaid
 flowchart TD
