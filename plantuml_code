@@ -1,0 +1,96 @@
+@startuml
+!theme materia-outline
+top to bottom direction
+
+skinparam {
+  BackgroundColor White
+  ActorBorderColor #2E86AB
+  ActorFontColor #2E86AB
+  ActorFontStyle bold
+  UseCaseBorderColor #A23B72
+  UseCaseBackgroundColor #F8F9FA
+  UseCaseFontColor #1D3557
+  UseCaseFontStyle bold
+  RectangleBorderColor #1D3557
+  RectangleFontColor #1D3557
+  RectangleFontStyle bold
+}
+
+skinparam usecase {
+  BackgroundColor<<climate>> #FFE5EC
+  BackgroundColor<<security>> #E2F0CB
+  BackgroundColor<<energy>> #FFF2CC
+  BackgroundColor<<control>> #D6EAF8
+}
+
+
+skinparam ArrowColor #2E86AB
+skinparam ArrowThickness 2
+skinparam ArrowFontStyle bold
+skinparam ArrowFontSize 13
+
+
+actor "Владелец" as Owner #2E86AB
+actor "Гость" as Guest #F18F01
+actor "Администратор" as Admin #A23B72
+actor "Мобильное\nприложение" as Mobile #C73E1D
+
+' Основные прецеденты с группировкой
+rectangle "КЛИМАТ И ОСВЕЩЕНИЕ" <<climate>> {
+  usecase "Контроль\nтемпературы" as Temperature
+  usecase "Управление\nосвещением" as Lights
+  usecase "Сценарии\nклимата" as ClimateScenes
+}
+
+rectangle "БЕЗОПАСНОСТЬ" <<security>> {
+  usecase "Система\nбезопасности" as Security
+  usecase "Мониторинг\nдатчиков" as Monitoring
+  usecase "Экстренные\nуведомления" as Alerts
+}
+
+rectangle "ЭНЕРГИЯ" <<energy>> {
+  usecase "Энергосбережение" as Energy
+  usecase "Статистика\nпотребления" as Stats
+}
+
+rectangle "УПРАВЛЕНИЕ" <<control>> {
+  usecase "Управление\nустройствами" as Devices
+  usecase "Автоматизация" as Automation
+  usecase "Настройка\nсистемы" as Config
+}
+Owner -[#2E86AB,bold]-> Temperature
+Owner -[#2E86AB,bold]-> Lights
+Owner -[#2E86AB,bold]-> Security
+Owner -[#2E86AB,bold]-> Devices
+Owner -[#2E86AB,bold]-> Energy
+Owner -[#2E86AB,bold]-> Stats
+
+Guest -[#F18F01,bold]-> Lights
+Guest -[#F18F01,bold]-> Devices
+
+Admin -[#A23B72,bold]-> Config
+Admin -[#A23B72,bold]-> Monitoring
+Admin -[#A23B72,bold]-> Stats
+
+Mobile -[#C73E1D,bold]-> Lights
+Mobile -[#C73E1D,bold]-> Temperature
+Mobile -[#C73E1D,bold]-> Security
+Mobile -[#C73E1D,bold]-> Devices
+
+Security .[#FF0000,bold]> Alerts : include
+Automation .[#2E86AB,bold]> ClimateScenes : include
+Config .[#2E86AB,bold]> Devices : extend
+
+note right of Owner
+  <b>Владелец</b>
+  Основной пользователь
+  с полным доступом
+end note
+
+note left of Guest
+  <b>Гость</b>
+  Временный доступ
+  к основным функциям
+end note
+
+@enduml
