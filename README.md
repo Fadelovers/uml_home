@@ -36,8 +36,7 @@ flowchart TD
     A3 --> B5 & B6
     A4 --> B1 & B2 & B3 & B4
 
-    classDef actor fill:#e1f5fe,stroke:#01579b
-    classDef function fill:#f3e5f5,stroke:#7b1fa2
+    classDef dark fill:#333333,stroke:#666666,color:white
     class A1,A2,A3,A4 actor
     class B1,B2,B3,B4,B5,B6 function
 ```
