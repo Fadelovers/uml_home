@@ -18,7 +18,29 @@
 !theme materia-outline
 top to bottom direction
 ```
+Тема: materia-outline
+Направление: top to bottom - компоновка сверху вниз
 
+Визуальное оформление (skinparam)
+```PlantUML
+skinparam {
+  BackgroundColor White
+  ActorBorderColor #2E86AB
+  ActorFontColor #2E86AB
+  ActorFontStyle bold
+  UseCaseBorderColor #A23B72
+  UseCaseBackgroundColor #F8F9FA
+  UseCaseFontColor #1D3557
+  UseCaseFontStyle bold
+  RectangleBorderColor #1D3557
+  RectangleFontColor #1D3557
+  RectangleFontStyle bold
+}
+```
+
+Задает цвета и стили для всех элементов:
+Акторы: синие (#2E86AB)
+Стрелки: жирные, контрастные
 
 # Умный дом - Диаграмма использования markdown
 
