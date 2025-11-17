@@ -52,7 +52,7 @@ skinparam usecase {
 }
 ```
 
-#Акторы
+# Акторы
 ```PlantUML
 actor "Владелец" as Owner
 actor "Гость" as Guest
@@ -73,14 +73,14 @@ rectangle "КЛИМАТ И ОСВЕЩЕНИЕ" <<climate>> {
 }
 
 ```
-#Связи между акторами и функциями
+# Связи между акторами и функциями
 ```PlantUML
 Owner --> Temperature
 Owner --> Lights
 Owner --> Security
 ...
 ```
-#Комиты
+# Комиты
 
 ```PlantUML
 note right of Owner
