@@ -90,7 +90,7 @@ note right of Owner
 end note
 ```
 
-# Умный дом - Диаграмма использования markdown
+# Умный дом - Диаграмма использования markdown(mermaid)
 ```mermaid
 flowchart TD
     %% Акторы
