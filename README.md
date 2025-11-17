@@ -65,7 +65,7 @@ actor "Мобильное\nприложение" as Mobile
 Мобильное приложения - Внешная система
 
 # Варианты использования
-```
+```PlantUML
 rectangle "КЛИМАТ И ОСВЕЩЕНИЕ" <<climate>> {
   usecase "Контроль\nтемпературы" as Temperature
   usecase "Управление\nосвещением" as Lights
@@ -74,7 +74,7 @@ rectangle "КЛИМАТ И ОСВЕЩЕНИЕ" <<climate>> {
 
 ```
 #Связи между акторами и функциями
-```
+```PlantUML
 Owner --> Temperature
 Owner --> Lights
 Owner --> Security
@@ -82,7 +82,7 @@ Owner --> Security
 ```
 #Комиты
 
-```
+```PlantUML
 note right of Owner
   <b>Владелец</b>
   Основной пользователь
