@@ -21,7 +21,7 @@ top to bottom direction
 Тема: materia-outline
 Направление: top to bottom - компоновка сверху вниз
 
-Визуальное оформление (skinparam)
+# Визуальное оформление (skinparam)
 ```PlantUML
 skinparam {
   BackgroundColor White
@@ -42,8 +42,55 @@ skinparam {
 Акторы: синие (#2E86AB)
 Стрелки: жирные, контрастные
 
-# Умный дом - Диаграмма использования markdown
+# Цветовые схемы для категорий
+```PlantUML
+skinparam usecase {
+  BackgroundColor<<climate>> #FFE5EC    # Розовый - климат
+  BackgroundColor<<security>> #E2F0CB   # Зеленый - безопасность
+  BackgroundColor<<energy>> #FFF2CC     # Желтый - энергия
+  BackgroundColor<<control>> #D6EAF8    # Голубой - управление
+}
+```
 
+#Акторы
+```PlantUML
+actor "Владелец" as Owner
+actor "Гость" as Guest
+actor "Администратор" as Admin
+actor "Мобильное\nприложение" as Mobile
+```
+Владелец - основной пользователь
+Гость - Временый доступ
+Администратор = Настройка системы
+Мобильное приложения - Внешная система
+
+# Варианты использования
+```
+rectangle "КЛИМАТ И ОСВЕЩЕНИЕ" <<climate>> {
+  usecase "Контроль\nтемпературы" as Temperature
+  usecase "Управление\nосвещением" as Lights
+  usecase "Сценарии\nклимата" as ClimateScenes
+}
+
+```
+#Связи между акторами и функциями
+```
+Owner --> Temperature
+Owner --> Lights
+Owner --> Security
+...
+```
+#Комиты
+
+```
+note right of Owner
+  <b>Владелец</b>
+  Основной пользователь
+  с полным доступом
+end note
+```
+
+# Умный дом - Диаграмма использования markdown
 ```mermaid
 flowchart TD
     %% Акторы
